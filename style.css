@@ -1,0 +1,120 @@
+*{
+    padding: 0px;
+    margin:0px;
+    box-sizing: border-box;
+}
+.navbar{
+
+    height: 50px;
+    background-color:white;
+    margin-top:10px;
+    display:flex;
+    justify-content: space-between;
+    margin-top: 0px;
+}
+.logo{
+    margin-top: 12px;
+    display:flex;
+    gap: 10px;
+}
+.logo>i{
+    margin-top: 2px;
+}
+.action-btn{
+    display: flex;
+    justify-content: space-around;
+    gap:10px;
+    align-items: center;
+    margin: 5px;
+}
+.add-btn{
+    display: flex;
+    gap : 10px;
+    width:110px;
+    height:30px;
+    padding: 5px 25px;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: green;
+    cursor: pointer;
+}
+.remove-btn{
+    display: flex;
+    gap : 10px;
+    width:110px;
+    height:30px;
+    padding: 5px 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: red;
+    cursor : pointer;
+}
+.color{
+    width: 25px;
+    height: 25px;
+    border: 1px solid black;
+    border-radius: 50px;
+}
+.red{
+    cursor: pointer;
+   background-color: brown;
+}
+.green{
+    cursor: pointer;
+   background-color: greenyellow;
+}
+.blue{
+    cursor :pointer;
+   background-color: blue;
+}
+.black{
+    cursor : pointer;
+    background-color: black;
+}
+.filter-cont{
+     width:230px;
+     display:flex;
+     justify-content:space-around;
+     align-items: center;
+}
+.priority-colors{
+    display:flex;
+    gap: 5px;
+}
+body{
+    background: linear-gradient(135deg,#667eea 0%, #764ba2 100%);
+}
+.ticket{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 30px;
+    width: 220px;
+    height: 110px;
+    border-radius: 20px;
+    background-color: aliceblue;
+    overflow: hidden;
+}
+.priority-label{
+    height: 10px;
+    width: 220px;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: black;
+    position: relative;
+    bottom: 8px;
+}
+.ticket-id{
+    text-transform: uppercase;
+    font-size: small;
+    margin-left: 30px;
+}
+.ticket-task{
+    margin-left: 20px;
+}
+.ticket-lock{
+    position: relative;
+    left: 200px;
+    bottom: 60px;
+}
+
