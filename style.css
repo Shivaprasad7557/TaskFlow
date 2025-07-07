@@ -117,4 +117,66 @@ body{
     left: 200px;
     bottom: 60px;
 }
+.task-adder{
+    width:400px;
+    height:300px;
+    border :1px solid white;
+    border-radius: 10px;
+    background-color: white;
+    position: absolute;
+    left: 420px;
+    bottom: 100px;
+    display: flex;
+    justify-content: space-around;
+    overflow: hidden;
+}
+.box-detail{
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #d3c0f7;
+    align-items: center;
+    margin-right: 5px;
+    gap:20px;
+}
+.box-detail>h3{
+    word-spacing: 7px;
+
+}
+textarea{
+    height: 300px;
+    margin-right:50px;
+    all:unset;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.enter-task{
+      width: 120;
+}
+.priority-selector{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 130px;
+}
+.priority{
+    width: 40px;
+    height: 50px;
+    border: 1px solid white;
+    border-radius: 15px;
+}
+.select-priority{
+    display: flex;
+    flex-wrap:wrap;
+    gap: 5px;
+}
+.priority-selector>div>h4{
+    border: 1px solid black;
+    width: 80px;
+    border-radius: 10px;
+    background-color:lightgray;
+    padding: 15px;
+    cursor: pointer;
+}
 
