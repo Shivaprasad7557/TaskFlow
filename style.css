@@ -100,9 +100,8 @@ body{
     width: 220px;
     border-radius: 10px;
     cursor: pointer;
-    background-color: black;
     position: relative;
-    bottom: 8px;
+    bottom: 12px;
 }
 .ticket-id{
     text-transform: uppercase;
@@ -126,7 +125,7 @@ body{
     position: absolute;
     left: 420px;
     bottom: 100px;
-    display: flex;
+    display: none;
     justify-content: space-around;
     overflow: hidden;
 }
@@ -178,5 +177,12 @@ textarea{
     background-color:lightgray;
     padding: 15px;
     cursor: pointer;
+}
+.main-cont{
+    display: flex;
+    flex-wrap: wrap;
+}
+.priority.selected{
+    border: 2px solid darkorange;
 }
 
