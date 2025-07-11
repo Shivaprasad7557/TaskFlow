@@ -57,19 +57,19 @@
 }
 .red{
     cursor: pointer;
-   background-color: brown;
+   background-color: rgb(222, 81, 81);
 }
 .green{
     cursor: pointer;
-   background-color: greenyellow;
+   background-color: rgb(175, 232, 90);
 }
 .blue{
     cursor :pointer;
-   background-color: blue;
+   background-color: rgb(92, 92, 212);
 }
 .black{
     cursor : pointer;
-    background-color: black;
+    background-color: rgb(48, 46, 46);
 }
 .filter-cont{
      width:230px;
@@ -94,6 +94,8 @@ body{
     border-radius: 20px;
     background-color: aliceblue;
     overflow: hidden;
+    position: relative;
+    box-sizing: border-box;
 }
 .priority-label{
     height: 10px;
@@ -101,12 +103,15 @@ body{
     border-radius: 10px;
     cursor: pointer;
     position: relative;
-    bottom: 12px;
+    bottom: 10px;
 }
 .ticket-id{
     text-transform: uppercase;
     font-size: small;
     margin-left: 30px;
+    position: relative;
+    bottom: 10px;
+    right: 10px;
 }
 .ticket-task{
     margin-left: 20px;
@@ -183,6 +188,6 @@ textarea{
     flex-wrap: wrap;
 }
 .priority.selected{
-    border: 2px solid darkorange;
+    border: 5px solid white; 
 }
 
