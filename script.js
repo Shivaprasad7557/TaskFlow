@@ -7,15 +7,18 @@ let mainCont = document.querySelector('.main-cont')
 let priorityBoxes = document.querySelectorAll('.priority')
 let selectedPriority = document.querySelector('.selected')
 let filterPriorityColor = document.querySelectorAll('.color')
-let priorityColor = 'white'
+let removebtn = document.querySelector('.remove-btn')
+let priorityColor = 'black'
 let lock = 'fa-lock'
 let unlock = 'fa-lock-open'
+let dontremove = 'fa-trash'
+let remove = 'fa-xmark'
 let ticketColors = ['red','green','blue','black']
 
 
 addbtn.addEventListener('click',()=>{
     addbtnflag = !addbtnflag
-    if(addbtnflag === false){
+    if(addbtnflag === true){
         taskadder.style.display = 'flex'
     }
     else{
@@ -142,4 +145,30 @@ filterPriorityColor.forEach((color)=>{
     })
 
 })
+
+// delete tickets feature
+let toggle = false
+
+removebtn.addEventListener('click',()=>{
+
+    if(removebtn.children[0].classList.contains(remove)){
+        removebtn.children[0].classList.remove(remove)
+        removebtn.children[0].classList.add(dontremove)
+        toggle = false
+    }
+    else{
+        removebtn.children[0].classList.remove(dontremove)
+        removebtn.children[0].classList.add(remove)
+        toggle = true
+    }})
+    
+    mainCont.addEventListener('click', (event) => {
+
+        const clickedTicket = event.target.closest('.ticket');
+    
+        if (toggle && clickedTicket) {
+            console.log("Ticket clicked in remove mode, removing:", clickedTicket);
+            clickedTicket.remove(); 
+        }
+    });
 
