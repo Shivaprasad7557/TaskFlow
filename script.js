@@ -14,8 +14,18 @@ let unlock = 'fa-lock-open'
 let dontremove = 'fa-trash'
 let remove = 'fa-xmark'
 let ticketColors = ['red','green','blue','black']
+let ticketArray = JSON.parse(localStorage.getItem('tickets')) || []
 
+function updateticketArray(){
+    localStorage.setItem('tickets',JSON.stringify(ticketArray))
+  }
 
+//get all datas from localstorage
+function init(){
+     ticketArray.forEach((ticket)=>{
+           createTask(ticket.task,ticket.ticketID,ticket.ticketColor)
+     })
+ }
 addbtn.addEventListener('click',()=>{
     addbtnflag = !addbtnflag
     if(addbtnflag === true){
@@ -39,6 +49,9 @@ taskadder.addEventListener('keydown',(event)=>{
         priorityBoxes.forEach((box)=>{
             box.classList.remove('selected')
         })
+        ticketArray.push({task,ticketID,ticketColor:priorityColor})
+
+        updateticketArray()
     }
 })
 
@@ -109,13 +122,24 @@ function colorChange(ticket){
      
      let priorityLabel = ticket.querySelector('.priority-label');
 
-     let i = 0;
+     let i = 0
 
-     priorityLabel.addEventListener('click',()=>{
+     priorityLabel.addEventListener('click',(event)=>{
           if(i == ticketColors.length){
             i = 0
           }
           priorityLabel.style.backgroundColor = ticketColors[i]
+
+          // updating the color in localstorage
+          
+          let UpdatedTicket = event.target.closest('.ticket');
+          let id = UpdatedTicket.children[1].innerText.trim()
+          ticketArray.forEach((ticket)=>{
+              if(ticket.ticketID.toLowerCase() === id.toLowerCase()){
+                ticket.ticketColor = ticketColors[i]
+              }
+          })
+          updateticketArray()
           i++
      })
      }
@@ -167,8 +191,22 @@ removebtn.addEventListener('click',()=>{
         const clickedTicket = event.target.closest('.ticket');
     
         if (toggle && clickedTicket) {
-            console.log("Ticket clicked in remove mode, removing:", clickedTicket);
-            clickedTicket.remove(); 
+
+            // removing the ticket from localstorage
+
+            let id = clickedTicket.children[1].innerText.trim()
+            let updatedticketArray = []
+             ticketArray.forEach((ticket)=>{
+                   if(ticket.ticketID.toLowerCase() !== id.toLowerCase()){
+                       updatedticketArray.push(ticket)
+                   }
+            })
+            console.log(updatedticketArray)
+            ticketArray = updatedticketArray
+           
+            updateticketArray()
+            clickedTicket.remove()
         }
     });
 
+init()
