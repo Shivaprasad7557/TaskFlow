@@ -83,15 +83,15 @@
     gap: 5px;
 }
 body{
-    background: linear-gradient(135deg,#667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg,#556ac5 0%, #925ec6 100%);
 }
 .ticket{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     margin: 30px;
-    width: 220px;
-    height: 110px;
+    width: 250px;
+    height: 125px;
     border-radius: 20px;
     background-color: aliceblue;
     overflow: hidden;
@@ -100,11 +100,11 @@ body{
 }
 .priority-label{
     height: 10px;
-    width: 220px;
+    width:100%;
     border-radius: 10px;
     cursor: pointer;
     position: relative;
-    bottom: 10px;
+    bottom: 11px;
 }
 .ticket-id{
     text-transform: uppercase;
@@ -119,8 +119,8 @@ body{
 }
 .ticket-lock{
     position: relative;
-    left: 200px;
-    bottom: 60px;
+    left: 220px;
+    bottom: 70px;
 }
 .task-adder{
     width:400px;
@@ -194,3 +194,44 @@ textarea{
     padding: 10px;
 }
 
+@media only screen and (max-width:560px){
+    .main-cont{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+    .ticket{
+        width: 90%;
+    }
+    .priority-label{
+        width: 100%;
+    }
+    .ticket-lock{
+        position:relative;
+        left:400px;
+    }
+    .filter-cont{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+    .navbar{
+        height:80px;
+        justify-content: space-around;
+    }
+    .logo{
+        margin-top: 25px;
+        margin-left: 5px;
+    }
+    .action-btn{
+        display: flex;
+        flex-direction: column;
+    }
+    .add-btn,.remove-btn{
+        height: 30px;
+    }
+    .task-adder{
+        left: 60px;
+        top: 70px;
+    }
+}
